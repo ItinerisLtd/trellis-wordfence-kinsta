@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Lee Hanbury-Pickett
+  description: Ensure required WordfFence files exist in shared directory
+  company: ItinerisLtd
+  license: MIT
+  min_ansible_version: '2.6'
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - kinsta
+    - trellis
+    - wordfence
+    - wordpress
+dependencies: []
