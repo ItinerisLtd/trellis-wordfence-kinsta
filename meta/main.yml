@@ -1,4 +1,6 @@
 galaxy_info:
+  namespace: itinerisltd
+  role_name: trellis_wordfence_kinsta
   author: Lee Hanbury-Pickett
   description: Ensure required WordfFence files exist in shared directory
   company: ItinerisLtd
