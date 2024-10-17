@@ -59,13 +59,7 @@ ansible-galaxy install -r galaxy.yml --force
 
 ## Usage
 
-1. Add a shared_children entry to Trellis that points to the new `wordfence-waf.php` file
-    ```yaml
-    project_shared_children:
-      - path: web/wp/wordfence-waf.php
-        src: wordfence-waf.php
-        type: file
-    ```
+1. Setup the [role variables](#role-variables)
 2. [Deploy](https://roots.io/trellis/docs/deploys/#example)
 3. Tell Kinsta to add the `auto_prepend_file` variable that points to `{{ deploy_helper.current_path }}/web/wp/wordfence-waf.php`
     1. `deploy_helper.shared_path` can differ between Trellis setups. Check for final path before asking Kinsta.
