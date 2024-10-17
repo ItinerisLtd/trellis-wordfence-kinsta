@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Run ansible-lint
-        uses: ansible-community/ansible-lint-action@main
+        uses: ansible/ansible-lint@main
+        # optional (see below):
         with:
-          path: "tests/"
+          args: ""
+          setup_python: "true"
+          working_directory: ""
+          requirements_file: ""

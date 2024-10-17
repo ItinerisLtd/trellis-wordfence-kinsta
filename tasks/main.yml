@@ -1,5 +1,6 @@
 ---
 - name: Template wordfence-waf.php
-  template:
-    src: "../templates/wordfence-waf.php.j2"
+  ansible.builtin.template:
+    src: "{{ role_path }}/templates/wordfence-waf.php.j2"
     dest: "{{ deploy_helper.new_release_path }}/web/wp/wordfence-waf.php"
+    mode: "0755"
