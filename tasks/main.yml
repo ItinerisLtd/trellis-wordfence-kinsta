@@ -2,4 +2,4 @@
 - name: Template wordfence-waf.php
   template:
     src: "../templates/wordfence-waf.php.j2"
-    dest: "{{ deploy_helper.shared_path }}/wordfence-waf.php"
+    dest: "{{ deploy_helper.new_release_path }}/web/wp/wordfence-waf.php"
