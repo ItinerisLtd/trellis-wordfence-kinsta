@@ -53,7 +53,7 @@ ansible-galaxy install -r galaxy.yml --force
     ```yaml
     # group_vars/all/deploy-hooks.yml
     # Learn more on https://roots.io/trellis/docs/deploys/#hooks
-    deploy_after:
+    deploy_finalize_after:
       - "{{ playbook_dir }}/vendor/roles/itinerisltd.trellis-wordfence-kinsta/tasks/main.yml"
     ```
 
@@ -61,10 +61,10 @@ ansible-galaxy install -r galaxy.yml --force
 
 1. Setup the [role variables](#role-variables)
 2. [Deploy](https://roots.io/trellis/docs/deploys/#example)
-3. Tell Kinsta to add the `auto_prepend_file` variable that points to `{{ deploy_helper.current_path }}/web/wp/wordfence-waf.php`
+3. Tell Kinsta to add the `auto_prepend_file` variable that points to `{{ deploy_helper.current_path }}/config/wordfence-waf.php`
     1. `deploy_helper.shared_path` can differ between Trellis setups. Check for final path before asking Kinsta.
-    2. This is usually where the uploads are stored.
-    3. E.g. `auto_prepend_file = '/www/kinstauser_123/public/current/web/wp/wordfence-waf.php'`
+    2. This is the path to the Bedrock/Radicle configs.
+    3. E.g. `auto_prepend_file = '/www/kinstauser_123/public/current/config/wordfence-waf.php'`
 
 ## FAQs
 

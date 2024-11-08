@@ -2,5 +2,8 @@
 - name: Template wordfence-waf.php
   ansible.builtin.template:
     src: "../templates/wordfence-waf.php.j2"
-    dest: "{{ deploy_helper.new_release_path }}/web/wp/wordfence-waf.php"
+    dest: "{{ deploy_helper.new_release_path }}/config/wordfence-waf.php"
     mode: "0755"
+  with_dict: "{{ wordpress_sites }}"
+  vars:
+    project_plugins_path: "{{ project.plugins_path | default('app/plugins') }}"
