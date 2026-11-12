@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
 
       - name: Get tag
         id: get_tag
@@ -21,7 +21,7 @@ jobs:
         run: zip -r -9 trellis-wordfence-kinsta.zip *
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
           body: Version ${{ steps.get_tag.value }}
           files: trellis-wordfence-kinsta.zip
